@@ -18,7 +18,7 @@ import edu.wpi.first.math.util.Units;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-  final static int TestNumber = 1;
+    final static int TestNumber = 1;
     /**
      * The left-to-right distance between the drivetrain wheels
      *
@@ -31,7 +31,7 @@ public final class Constants {
      * Should be measured from center to center.
      */
     public static final double DRIVETRAIN_WHEELBASE_METERS = Units.inchesToMeters(26);
-
+    
     public static final SwerveDriveKinematics m_kinematics = new SwerveDriveKinematics(
         // Front left
         new Translation2d(DRIVETRAIN_TRACKWIDTH_METERS / 2.0, DRIVETRAIN_WHEELBASE_METERS / 2.0),
@@ -41,46 +41,48 @@ public final class Constants {
         new Translation2d(-DRIVETRAIN_TRACKWIDTH_METERS / 2.0, DRIVETRAIN_WHEELBASE_METERS / 2.0),
         // Back right
         new Translation2d(-DRIVETRAIN_TRACKWIDTH_METERS / 2.0, -DRIVETRAIN_WHEELBASE_METERS / 2.0)
-);
-
-    public static final int FRONT_LEFT_MODULE_DRIVE_MOTOR = 7; // FIXME Set front left module drive motor ID
-    public static final int FRONT_LEFT_MODULE_STEER_MOTOR = 3; // FIXME Set front left module steer motor ID
-    public static final int FRONT_LEFT_MODULE_STEER_ENCODER = 1; // FIXME Set front left steer encoder ID
-    public static final double FRONT_LEFT_MODULE_STEER_OFFSET = -Math.toRadians(185.1); // FIXME Measure and set front left steer offset
-
-    public static final int FRONT_RIGHT_MODULE_DRIVE_MOTOR = 0; // FIXME Set front right drive motor ID
-    public static final int FRONT_RIGHT_MODULE_STEER_MOTOR = 1; // FIXME Set front right steer motor ID
-    public static final int FRONT_RIGHT_MODULE_STEER_ENCODER = 3; // FIXME Set front right steer encoder ID
-    public static final double FRONT_RIGHT_MODULE_STEER_OFFSET = -Math.toRadians(196.6); // FIXME Measure and set front right steer offset
-
-    public static final int BACK_LEFT_MODULE_DRIVE_MOTOR = 2; // FIXME Set back left drive motor ID
-    public static final int BACK_LEFT_MODULE_STEER_MOTOR = 4; // FIXME Set back left steer motor ID
-    public static final int BACK_LEFT_MODULE_STEER_ENCODER = 0; // FIXME Set back left steer encoder ID
-    public static final double BACK_LEFT_MODULE_STEER_OFFSET = -Math.toRadians(55.4); // FIXME Measure and set back left steer offset
-
-    public static final int BACK_RIGHT_MODULE_DRIVE_MOTOR = 5; // FIXME Set back right drive motor ID
-    public static final int BACK_RIGHT_MODULE_STEER_MOTOR = 6; // FIXME Set back right steer motor ID
-    public static final int BACK_RIGHT_MODULE_STEER_ENCODER = 2; // FIXME Set back right steer encoder ID
-    public static final double BACK_RIGHT_MODULE_STEER_OFFSET = -Math.toRadians(31.0); // FIXME Measure and set back right steer offset
-
-    public static final class ModuleConstants {
-        public static final double kWheelDiameterMeters = Units.inchesToMeters(4);
-        public static final double kDriveMotorGearRatio = 1 / 6.75;
-        public static final double kTurningMotorGearRatio = 7 / 150;
-        public static final double kDriveEncoderRot2Meter = .0472867872007;
-        public static final double kTurningEncoderRot2Rad = kTurningMotorGearRatio * 360;
-        public static final double kDriveEncoderRPM2MeterPerSec = kDriveEncoderRot2Meter / 60;
-        public static final double kTurningEncoderRPM2RadPerSec = kTurningEncoderRot2Rad / 60;
-        public static final double kPTurning = 0.0075;
-        public static final double kITurning = 0.000;
-    }
-
-    public static final class DriveConstants {
-
-        public static final double kTrackWidth = Units.inchesToMeters(21);
-        // Distance between right and left wheels
-        public static final double kWheelBase = Units.inchesToMeters(25);
-        // Distance between front and back wheels
+        );
+        
+        public static final int DRIVER_CONTROLLER = 0;
+        
+        public static final int FRONT_LEFT_MODULE_DRIVE_MOTOR = 7; // FIXME Set front left module drive motor ID
+        public static final int FRONT_LEFT_MODULE_STEER_MOTOR = 3; // FIXME Set front left module steer motor ID
+        public static final int FRONT_LEFT_MODULE_STEER_ENCODER = 1; // FIXME Set front left steer encoder ID
+        public static final double FRONT_LEFT_MODULE_STEER_OFFSET = -Math.toRadians(185.1); // FIXME Measure and set front left steer offset
+        
+        public static final int FRONT_RIGHT_MODULE_DRIVE_MOTOR = 0; // FIXME Set front right drive motor ID
+        public static final int FRONT_RIGHT_MODULE_STEER_MOTOR = 1; // FIXME Set front right steer motor ID
+        public static final int FRONT_RIGHT_MODULE_STEER_ENCODER = 3; // FIXME Set front right steer encoder ID
+        public static final double FRONT_RIGHT_MODULE_STEER_OFFSET = -Math.toRadians(196.6); // FIXME Measure and set front right steer offset
+        
+        public static final int BACK_LEFT_MODULE_DRIVE_MOTOR = 2; // FIXME Set back left drive motor ID
+        public static final int BACK_LEFT_MODULE_STEER_MOTOR = 4; // FIXME Set back left steer motor ID
+        public static final int BACK_LEFT_MODULE_STEER_ENCODER = 0; // FIXME Set back left steer encoder ID
+        public static final double BACK_LEFT_MODULE_STEER_OFFSET = -Math.toRadians(55.4); // FIXME Measure and set back left steer offset
+        
+        public static final int BACK_RIGHT_MODULE_DRIVE_MOTOR = 5; // FIXME Set back right drive motor ID
+        public static final int BACK_RIGHT_MODULE_STEER_MOTOR = 6; // FIXME Set back right steer motor ID
+        public static final int BACK_RIGHT_MODULE_STEER_ENCODER = 2; // FIXME Set back right steer encoder ID
+        public static final double BACK_RIGHT_MODULE_STEER_OFFSET = -Math.toRadians(31.0); // FIXME Measure and set back right steer offset
+        
+        public static final class ModuleConstants {
+            public static final double kWheelDiameterMeters = Units.inchesToMeters(4);
+            public static final double kDriveMotorGearRatio = 1 / 6.75;
+            public static final double kTurningMotorGearRatio = 7 / 150;
+            public static final double kDriveEncoderRot2Meter = .0472867872007;
+            public static final double kTurningEncoderRot2Rad = kTurningMotorGearRatio * 360;
+            public static final double kDriveEncoderRPM2MeterPerSec = kDriveEncoderRot2Meter / 60;
+            public static final double kTurningEncoderRPM2RadPerSec = kTurningEncoderRot2Rad / 60;
+            public static final double kPTurning = 0.0075;
+            public static final double kITurning = 0.000;
+        }
+        
+        public static final class DriveConstants {
+            
+            public static final double kTrackWidth = Units.inchesToMeters(21);
+            // Distance between right and left wheels
+            public static final double kWheelBase = Units.inchesToMeters(25);
+            // Distance between front and back wheels
         public static final SwerveDriveKinematics kDriveKinematics = new SwerveDriveKinematics(
                 new Translation2d(kWheelBase / 2, -kTrackWidth / 2),
                 new Translation2d(kWheelBase / 2, kTrackWidth / 2),
@@ -154,16 +156,18 @@ public final class Constants {
     }
 
     public static final class ArmConstants{
-        public static final int k_ARM_DRIVE_LEADER_ID = 1;
-        public static final int k_ARM_DRIVE_FOLLOW_ID = 2;
+        // TODO: change these stuff as needed
+        public static final int arm_ID = 1;
+        //Uncomment k_MOTORS_REVERSED if true
         public static final boolean k_MOTORS_REVERSED = true;
         public class ControlType{
             public static final int k_PERCENT = 0;
             public static final int k_POSITION = 1;
         } 
         public static final double k_SOFT_LIMIT = 125;
-
+    
     }
+    
 
     public static final class TelescopeConstants{
         public static final int k_TELESCOPE_DRIVE_LEADER_ID = 8;
