@@ -45,6 +45,13 @@ public class ArmSubsystem extends SubsystemBase {
     CANSparkMax arm = new CANSparkMax(ArmConstants.arm_ID, MotorType.kBrushless);
 
     public ArmSubsystem() {
+
+        arm.restoreFactoryDefaults();
+        arm.setInverted(true);
+        arm.setIdleMode(IdleMode.kBrake);
+        arm.setSmartCurrentLimit(ArmConstants.ARM_CURRENT_LIMIT_A);
+        arm.burnFlash();
+
         this.armPidController = arm.getPIDController();
         this.armPidController.setP(.005);
         this.armPidController.setI(0);
@@ -109,7 +116,7 @@ public class ArmSubsystem extends SubsystemBase {
     }
 
     public double getArmPositionDegree(){
-        double angle = (armEncoder.getPosition() / 8.75);
+        double angle = (armEncoder.getPosition() / 8.75); // TODO: add whatever value after /8.75 if the value is off. add the beginnig value
         return angle+0;
     }
 

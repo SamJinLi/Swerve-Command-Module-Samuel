@@ -44,8 +44,10 @@ public class RobotContainer {
   private final ArmSubsystem armSubsystem = new ArmSubsystem();
   // private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
   private final XboxController m_controller = new XboxController(0);
+  // NOTE: port 1 is arm
   private final Joystick m_js = new Joystick(1);
-  private final Joystick m_js2 = new Joystick(2);
+  // NOTE: port 2 is drivetrain?
+  // private final Joystick m_js2 = new Joystick(2);
   // TODO: TUNE ALL THE VALUES
   private final double zeron = 0;//zero
   private final double flatn = 0;//flat
@@ -142,8 +144,16 @@ armSubsystem.setDefaultCommand(new ArmCommand(
     new Trigger(m_controller::getBackButtonPressed).onTrue(new ZeroGyroscope(m_drivetrainSubsystem));
         //new Trigger(m_controller::getAButtonPressed).onTrue(new LockWheels(swerveSubsystem));
         //new Trigger(m_controller::getBButtonPressed).onTrue(new UnlockWheels(swerveSubsystem));
+
+
+
+
+
+
+
+        // Change all these 
         //zero that bih!
-        new Trigger(() -> m_js2.getRawButtonPressed(7)).onTrue(new ArmCommand(
+        new Trigger(() -> m_js.getRawButtonPressed(7)).onTrue(new ArmCommand(
             armSubsystem,
             zeron,
             () -> m_js.getThrottle()
@@ -151,14 +161,14 @@ armSubsystem.setDefaultCommand(new ArmCommand(
         // new Trigger(() -> m_js2.getRawButtonPressed(8)).onTrue(new ArmCommand(
         //     armSubsystem,
         //     flatn,
-        //     () -> m_js.getThrottle(),
-        //     () -> m_js2.getThrottle()
+        //     () -> m_js.getThrottle()
+        
         // ));
         // new Trigger(() -> m_js.getRawButtonPressed(7)).onTrue(new ArmCommand(
         //     armSubsystem,
         //     zerop,
-        //     () -> m_js.getThrottle(),
-        //     () -> m_js2.getThrottle()
+        //     () -> m_js.getThrottle()
+        
         // ));
 
 
@@ -166,107 +176,93 @@ armSubsystem.setDefaultCommand(new ArmCommand(
         // new Trigger(() -> m_js2.getRawButtonPressed(11)).onTrue(new ArmCommand(
         //     armSubsystem,
         //     flatn,
-        //     () -> m_js.getThrottle(),
-        //     () -> m_js2.getThrottle()
+        //     () -> m_js.getThrottle()
+        
         // ));
         //the thing that a notc would do
         // new Trigger(() -> m_js2.getRawButtonPressed(12)).onTrue(new ArmCommand(
         //     armSubsystem,
         //     forty5,
-        //     () -> m_js.getThrottle(),
-        //     () -> m_js2.getThrottle()
+        //     () -> m_js.getThrottle()
+        
         // ));
         //pick that shi up
-        new Trigger(() -> m_js2.getRawButtonPressed(3)).onTrue(new ArmCommand(
+        new Trigger(() -> m_js.getRawButtonPressed(3)).onTrue(new ArmCommand(
             armSubsystem,
             pickupn,
-            () -> m_js.getThrottle(),
-            () -> m_js2.getThrottle()
+            () -> m_js.getThrottle()
         ));
         //mid cone (negative direction)
-        new Trigger(() -> m_js2.getRawButtonPressed(4)).onTrue(
+        new Trigger(() -> m_js.getRawButtonPressed(4)).onTrue(
             new ArmCommand(armSubsystem,
              autocubehigh,
-             () -> m_js.getThrottle(),
-             () -> m_js2.getThrottle())
+             () -> m_js.getThrottle()
+)
         );
         
         //high cone (negative direction)
-        new Trigger(() -> m_js2.getRawButtonPressed(5)).onTrue(new ArmCommand(
+        new Trigger(() -> m_js.getRawButtonPressed(5)).onTrue(new ArmCommand(
             armSubsystem,
             highn,
-            () -> m_js.getThrottle(),
-            () -> m_js2.getThrottle()
+            () -> m_js.getThrottle()
         ));
         new Trigger(() -> m_js.getRawButtonPressed(3)).onTrue(new ArmCommand(
             armSubsystem,
             pickupp,
-            () -> m_js.getThrottle(),
-            () -> m_js2.getThrottle()
+            () -> m_js.getThrottle()
         ));
         new Trigger(() -> m_js.getRawButtonPressed(4)).onTrue(new ArmCommand(
             armSubsystem,
             telecubehigh,
-            () -> m_js.getThrottle(),
-            () -> m_js2.getThrottle()
+            () -> m_js.getThrottle()
         ));
         new Trigger(() -> m_js.getRawButtonPressed(5)).onTrue(new ArmCommand(
             armSubsystem,
             highp,
-            () -> m_js.getThrottle(),
-            () -> m_js2.getThrottle()
+            () -> m_js.getThrottle()
         ));
-        new Trigger(() -> m_js2.getRawButtonPressed(6)).onTrue(new ArmCommand(
+        new Trigger(() -> m_js.getRawButtonPressed(6)).onTrue(new ArmCommand(
             armSubsystem,
             stationn,
-            () -> m_js.getThrottle(),
-            () -> m_js2.getThrottle()
+            () -> m_js.getThrottle()
         ));
         new Trigger(() -> m_js.getRawButtonPressed(6)).onTrue(new ArmCommand(
             armSubsystem,
             stationp,
-            () -> m_js.getThrottle(),
-            () -> m_js2.getThrottle()
+            () -> m_js.getThrottle()
         ));
         new Trigger(() -> m_js.getRawButtonPressed(11)).onTrue(new ArmCommand(
             armSubsystem,
             hoverp,
-            () -> m_js.getThrottle(),
-            () -> m_js2.getThrottle()
+            () -> m_js.getThrottle()
         ));
         new Trigger(() -> m_js.getRawButtonPressed(12)).onTrue(new ArmCommand(
             armSubsystem,
             sidep,
-            () -> m_js.getThrottle(),
-            () -> m_js2.getThrottle()
+            () -> m_js.getThrottle()
         ));
-        new Trigger(() -> m_js2.getRawButtonPressed(11)).onTrue(new ArmCommand(
+        new Trigger(() -> m_js.getRawButtonPressed(11)).onTrue(new ArmCommand(
             armSubsystem,
             hovern,
-            () -> m_js.getThrottle(),
-            () -> m_js2.getThrottle()
+            () -> m_js.getThrottle()
         ));
-        new Trigger(() -> m_js2.getRawButtonPressed(12)).onTrue(new ArmCommand(
+        new Trigger(() -> m_js.getRawButtonPressed(12)).onTrue(new ArmCommand(
             armSubsystem,
             siden,
-            () -> m_js.getThrottle(),
-            () -> m_js2.getThrottle()
+            () -> m_js.getThrottle()
         ));
-        new Trigger(() -> m_js2.getRawButton(10)).onTrue(new ATPositionCmd(
-          armSubsystem, zeron, () -> m_js.getThrottle(),
-          () -> m_js2.getThrottle())
+        new Trigger(() -> m_js.getRawButton(10)).onTrue(new ArmCommand(
+          armSubsystem, zeron, () -> m_js.getThrottle())
         );
-        new Trigger(() -> m_js2.getRawButtonPressed(9)).onTrue(new ArmCommand(
+        new Trigger(() -> m_js.getRawButtonPressed(9)).onTrue(new ArmCommand(
             armSubsystem,
             midn,
-            () -> m_js.getThrottle(),
-            () -> m_js2.getThrottle()
+            () -> m_js.getThrottle()
         ));
         new Trigger(() -> m_js.getRawButtonPressed(9)).onTrue(new ArmCommand(
             armSubsystem,
             midp,
-            () -> m_js.getThrottle(),
-            () -> m_js2.getThrottle()
+            () -> m_js.getThrottle()
         ));
   }
 
@@ -283,17 +279,17 @@ armSubsystem.setDefaultCommand(new ArmCommand(
     // );
     m_autoselected = autoChooser.getSelected();
     return new SequentialCommandGroup(
-      new DisableCompCmd(intakeSubsystem),
-      //new CloseSolenoidCmd(intakeSubsystem),//for cone
-      new ATWAutoCmd(armSubsystem, autocubehigh, null, null),
-      //new ATWAutoCmd(armSubsystem, highn, null, null),
-      new ShootCubeCmd(intakeSubsystem),
-      //new CloseSolenoidCmd(intakeSubsystem),//for cone only
-      new ATWAutoCmd(armSubsystem, zeron, null, null),
-      new CloseSolenoidCmd(intakeSubsystem),
-      new PathPlannerCmd(m_drivetrainSubsystem, armSubsystem, intakeSubsystem, "OneMeter"),
-      new ChargingStationAuto(m_drivetrainSubsystem),
-      new LockWheelsCmd(m_drivetrainSubsystem)
+      // new DisableCompCmd(intakeSubsystem),
+      // //new CloseSolenoidCmd(intakeSubsystem),//for cone
+      // new ATWAutoCmd(armSubsystem, autocubehigh, null, null),
+      // //new ATWAutoCmd(armSubsystem, highn, null, null),
+      // new ShootCubeCmd(intakeSubsystem),
+      // //new CloseSolenoidCmd(intakeSubsystem),//for cone only
+      // new ATWAutoCmd(armSubsystem, zeron, null, null),
+      // new CloseSolenoidCmd(intakeSubsystem),
+      // new PathPlannerCmd(m_drivetrainSubsystem, armSubsystem, intakeSubsystem, "OneMeter"),
+      // new ChargingStationAuto(m_drivetrainSubsystem),
+      // new LockWheelsCmd(m_drivetrainSubsystem)
     );
 
     
