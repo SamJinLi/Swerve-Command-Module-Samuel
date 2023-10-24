@@ -5,7 +5,7 @@
 package frc.robot.commands;
 
 import java.util.function.Supplier;
-import frc.robot.Constants.WristConstants;
+// import frc.robot.Constants.WristConstants;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants.IntakeConstants;
@@ -49,6 +49,7 @@ public class IntakeDefaultCmd extends CommandBase {
         } else {
             intakePower = 0.0;
         }
+        intakeSubsystem.setIntakeMotor(intakePower);
       }
 
   // Called once the command ends or is interrupted.

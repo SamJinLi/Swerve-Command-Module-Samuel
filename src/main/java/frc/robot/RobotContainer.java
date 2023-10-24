@@ -50,25 +50,25 @@ public class RobotContainer {
   // NOTE: port 2 is drivetrain?
   // private final Joystick m_js2 = new Joystick(2);
   // TODO: TUNE ALL THE VALUES
-  private final double zeron = 0;//zero
-  private final double flatn = 0;//flat
-  private final double zerop = 0;
-  private final double vert = 0;
-  private final double forty5 = 0;//notc
-  private final double pickupn = 0;
-  private final double pickupp = 0;//pickup
-  private final double midn = 0;//mid cone
-  private final double midp = 0;
-  private final double highn = 0;//high cone
-  private final double highp = 0;
-  private final double stationp = 0;
-  private final double stationn = 0;
-  private final double hovern = 0;
-  private final double hoverp = 0;
-  private final double siden = 0;
-  private final double sidep = 0;
-  private final double autocubehigh = 0;
-  private final double telecubehigh = 0;
+  // private final double zeron = 0;//zero
+  // private final double flatn = 0;//flat
+  // private final double zerop = 0;
+  // private final double vert = 0;
+  // private final double forty5 = 0;//notc
+  // private final double pickupn = 0;
+  // private final double pickupp = 0;//pickup
+  // private final double midn = 0;//mid cone
+  // private final double midp = 0;
+  // private final double highn = 0;//high cone
+  // private final double highp = 0;
+  // private final double stationp = 0;
+  // private final double stationn = 0;
+  // private final double hovern = 0;
+  // private final double hoverp = 0;
+  // private final double siden = 0;
+  // private final double sidep = 0;
+  // private final double autocubehigh = 0;
+  // private final double telecubehigh = 0;
   private final SendableChooser<String> autoChooser = new SendableChooser<>();
   private String m_autoselected = "New Path";
   private final double pos = -3;
@@ -152,11 +152,11 @@ armSubsystem.setDefaultCommand(new ArmCommand(
 
         // Change all these 
         //zero that bih!
-        new Trigger(() -> m_js.getRawButtonPressed(7)).onTrue(new ArmCommand(
-            armSubsystem,
-            zeron,
-            () -> m_js.getThrottle()
-        ));
+        // new Trigger(() -> m_js.getRawButtonPressed(7)).onTrue(new ArmCommand(
+        //     armSubsystem,
+        //     zeron,
+        //     () -> m_js.getThrottle()
+        // ));
         // new Trigger(() -> m_js2.getRawButtonPressed(8)).onTrue(new ArmCommand(
         //     armSubsystem,
         //     flatn,
@@ -186,83 +186,83 @@ armSubsystem.setDefaultCommand(new ArmCommand(
         
         // ));
         //pick that shi up
-        new Trigger(() -> m_js.getRawButtonPressed(3)).onTrue(new ArmCommand(
-            armSubsystem,
-            pickupn,
-            () -> m_js.getThrottle()
-        ));
-        //mid cone (negative direction)
-        new Trigger(() -> m_js.getRawButtonPressed(4)).onTrue(
-            new ArmCommand(armSubsystem,
-             autocubehigh,
-             () -> m_js.getThrottle()
-)
-        );
+//         new Trigger(() -> m_js.getRawButtonPressed(3)).onTrue(new ArmCommand(
+//             armSubsystem,
+//             pickupn,
+//             () -> m_js.getThrottle()
+//         ));
+//         //mid cone (negative direction)
+//         new Trigger(() -> m_js.getRawButtonPressed(4)).onTrue(
+//             new ArmCommand(armSubsystem,
+//              autocubehigh,
+//              () -> m_js.getThrottle()
+// )
+//         );
         
-        //high cone (negative direction)
-        new Trigger(() -> m_js.getRawButtonPressed(5)).onTrue(new ArmCommand(
-            armSubsystem,
-            highn,
-            () -> m_js.getThrottle()
-        ));
-        new Trigger(() -> m_js.getRawButtonPressed(3)).onTrue(new ArmCommand(
-            armSubsystem,
-            pickupp,
-            () -> m_js.getThrottle()
-        ));
-        new Trigger(() -> m_js.getRawButtonPressed(4)).onTrue(new ArmCommand(
-            armSubsystem,
-            telecubehigh,
-            () -> m_js.getThrottle()
-        ));
-        new Trigger(() -> m_js.getRawButtonPressed(5)).onTrue(new ArmCommand(
-            armSubsystem,
-            highp,
-            () -> m_js.getThrottle()
-        ));
-        new Trigger(() -> m_js.getRawButtonPressed(6)).onTrue(new ArmCommand(
-            armSubsystem,
-            stationn,
-            () -> m_js.getThrottle()
-        ));
-        new Trigger(() -> m_js.getRawButtonPressed(6)).onTrue(new ArmCommand(
-            armSubsystem,
-            stationp,
-            () -> m_js.getThrottle()
-        ));
-        new Trigger(() -> m_js.getRawButtonPressed(11)).onTrue(new ArmCommand(
-            armSubsystem,
-            hoverp,
-            () -> m_js.getThrottle()
-        ));
-        new Trigger(() -> m_js.getRawButtonPressed(12)).onTrue(new ArmCommand(
-            armSubsystem,
-            sidep,
-            () -> m_js.getThrottle()
-        ));
-        new Trigger(() -> m_js.getRawButtonPressed(11)).onTrue(new ArmCommand(
-            armSubsystem,
-            hovern,
-            () -> m_js.getThrottle()
-        ));
-        new Trigger(() -> m_js.getRawButtonPressed(12)).onTrue(new ArmCommand(
-            armSubsystem,
-            siden,
-            () -> m_js.getThrottle()
-        ));
-        new Trigger(() -> m_js.getRawButton(10)).onTrue(new ArmCommand(
-          armSubsystem, zeron, () -> m_js.getThrottle())
-        );
-        new Trigger(() -> m_js.getRawButtonPressed(9)).onTrue(new ArmCommand(
-            armSubsystem,
-            midn,
-            () -> m_js.getThrottle()
-        ));
-        new Trigger(() -> m_js.getRawButtonPressed(9)).onTrue(new ArmCommand(
-            armSubsystem,
-            midp,
-            () -> m_js.getThrottle()
-        ));
+//         //high cone (negative direction)
+//         new Trigger(() -> m_js.getRawButtonPressed(5)).onTrue(new ArmCommand(
+//             armSubsystem,
+//             highn,
+//             () -> m_js.getThrottle()
+//         ));
+//         new Trigger(() -> m_js.getRawButtonPressed(3)).onTrue(new ArmCommand(
+//             armSubsystem,
+//             pickupp,
+//             () -> m_js.getThrottle()
+//         ));
+//         new Trigger(() -> m_js.getRawButtonPressed(4)).onTrue(new ArmCommand(
+//             armSubsystem,
+//             telecubehigh,
+//             () -> m_js.getThrottle()
+//         ));
+//         new Trigger(() -> m_js.getRawButtonPressed(5)).onTrue(new ArmCommand(
+//             armSubsystem,
+//             highp,
+//             () -> m_js.getThrottle()
+//         ));
+//         new Trigger(() -> m_js.getRawButtonPressed(6)).onTrue(new ArmCommand(
+//             armSubsystem,
+//             stationn,
+//             () -> m_js.getThrottle()
+//         ));
+//         new Trigger(() -> m_js.getRawButtonPressed(6)).onTrue(new ArmCommand(
+//             armSubsystem,
+//             stationp,
+//             () -> m_js.getThrottle()
+//         ));
+//         new Trigger(() -> m_js.getRawButtonPressed(11)).onTrue(new ArmCommand(
+//             armSubsystem,
+//             hoverp,
+//             () -> m_js.getThrottle()
+//         ));
+//         new Trigger(() -> m_js.getRawButtonPressed(12)).onTrue(new ArmCommand(
+//             armSubsystem,
+//             sidep,
+//             () -> m_js.getThrottle()
+//         ));
+//         new Trigger(() -> m_js.getRawButtonPressed(11)).onTrue(new ArmCommand(
+//             armSubsystem,
+//             hovern,
+//             () -> m_js.getThrottle()
+//         ));
+//         new Trigger(() -> m_js.getRawButtonPressed(12)).onTrue(new ArmCommand(
+//             armSubsystem,
+//             siden,
+//             () -> m_js.getThrottle()
+//         ));
+//         new Trigger(() -> m_js.getRawButton(10)).onTrue(new ArmCommand(
+//           armSubsystem, zeron, () -> m_js.getThrottle())
+//         );
+//         new Trigger(() -> m_js.getRawButtonPressed(9)).onTrue(new ArmCommand(
+//             armSubsystem,
+//             midn,
+//             () -> m_js.getThrottle()
+//         ));
+//         new Trigger(() -> m_js.getRawButtonPressed(9)).onTrue(new ArmCommand(
+//             armSubsystem,
+//             midp,
+//             () -> m_js.getThrottle()
+//         ));
   }
 
   /**
