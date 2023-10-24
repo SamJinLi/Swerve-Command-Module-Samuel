@@ -164,7 +164,7 @@ public final class Constants {
             public static final int k_PERCENT = 0;
             public static final int k_POSITION = 1;
         }
-        // TODO: change the softlimit
+        // TODO: change the softlimitf
         public static final double k_SOFT_LIMIT = 125;
 
     
@@ -197,12 +197,12 @@ public final class Constants {
         public static final double k_CUBE_OUTTAKE_SPEED = -0.25;
         public static final double k_CONE_INTAKE_SPEED = 0.75;
         public static final double k_CONE_OUTTAKE_SPEED = -0.75;
-        public static final int k_INTAKE_MOTOR_ID = 10;
+        public static final int k_INTAKE_MOTOR_ID = 6;
 
         public static final int INTAKE_CURRENT_LIMIT_A = 25;
         public static final int INTAKE_HOLD_CURRENT_LIMIT_A = 0;
         public static final double INTAKE_OUTPUT_POWER = 0.9;// decimal form! not in percent!
-        public static final double INTAKE_HOLD_POWER = 0;
+        public static final double INTAKE_HOLD_POWER = 0;//TODO: change the holding power after tested
         
     }
 

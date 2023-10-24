@@ -38,14 +38,22 @@ import frc.robot.Constants.*;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class IntakeSubsystem extends SubsystemBase {
+  CANSparkMax intake = new CANSparkMax(IntakeConstants.k_INTAKE_MOTOR_ID, MotorType.kBrushless);
   /** Creates a new IntakeSubsystem. */
   public IntakeSubsystem() {
-    CANSparkMax intake = new CANSparkMax(6, MotorType.kBrushless);
+    
     intake.restoreFactoryDefaults();
-    intake.setSmartCurrentLimit(Constants.INTAKE_CURRENT_LIMIT_A);
+    intake.setSmartCurrentLimit(IntakeConstants.INTAKE_CURRENT_LIMIT_A);
     intake.setInverted(false);
     intake.setIdleMode(IdleMode.kBrake);
     intake.burnFlash();
+  }
+
+  public void setIntakeMotor(double percent) {
+    intake.set(percent);
+    SmartDashboard.putNumber("intake power (%)", percent);
+    SmartDashboard.putNumber("intake motor current (amps)", intake.getOutputCurrent());
+    SmartDashboard.putNumber("intake motor temperature (C)", intake.getMotorTemperature());
   }
 
   @Override
