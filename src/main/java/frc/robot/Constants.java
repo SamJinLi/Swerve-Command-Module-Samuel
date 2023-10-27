@@ -157,11 +157,11 @@ public final class Constants {
 
     public static final class ArmConstants{
         // TODO: change these stuff as needed
-        public static final int arm_ID = 1;
+        public static final int arm_ID = 8; //FIXME: change the port id to 8
         //Uncomment k_MOTORS_REVERSED if true
         public static final boolean k_MOTORS_REVERSED = true;
         public class ControlType{
-            public static final int k_PERCENT = 0;
+            public static final int k_PERCENT = 20;
             public static final int k_POSITION = 1;
         }
         // TODO: change the softlimitf
@@ -173,23 +173,14 @@ public final class Constants {
 
     
     }
-
-    public static final class TelescopeConstants{
-        public static final int k_TELESCOPE_DRIVE_LEADER_ID = 8;
-        public static final int k_TELESCOPE_DRIVE_FOLLOW_ID = 9;
-        public static final boolean k_MOTORS_REVERSED = false;
-        public static final double k_FULL_EXTENSION = 45;
-        public static final double k_FULL_RETRACTION = 0;
-    }
-
-    public static final class VisionConstants{
-        //FIXME set limelight angle DEGREES
-        public static final double k_LIMELIGHT_ANGLE_RADIANS = 0;
-        //FIXME set limelight height from ground inches
-        public static final double k_LIMELIGHT_HEIGHT_INCHES = 0;
-        //FIXME set height of goal
-        public static final double k_GOAL_HEIGHT_INCHES = 0;
-    }
+    // public static final class VisionConstants{
+    //     //FIXME set limelight angle DEGREES
+    //     public static final double k_LIMELIGHT_ANGLE_RADIANS = 0;
+    //     //FIXME set limelight height from ground inches
+    //     public static final double k_LIMELIGHT_HEIGHT_INCHES = 0;
+    //     //FIXME set height of goal
+    //     public static final double k_GOAL_HEIGHT_INCHES = 0;
+    // }
 
     public static final class IntakeConstants{
         public static final int SOLENOID_PORT = 7;
@@ -197,20 +188,12 @@ public final class Constants {
         public static final double k_CUBE_OUTTAKE_SPEED = -0.25;
         public static final double k_CONE_INTAKE_SPEED = 0.75;
         public static final double k_CONE_OUTTAKE_SPEED = -0.75;
-        public static final int k_INTAKE_MOTOR_ID = 6;
+        public static final int k_INTAKE_MOTOR_ID = 9; //FIXME: change port number to 9!
 
         public static final int INTAKE_CURRENT_LIMIT_A = 25;
         public static final int INTAKE_HOLD_CURRENT_LIMIT_A = 0;
         public static final double INTAKE_OUTPUT_POWER = 0.9;// decimal form! not in percent!
         public static final double INTAKE_HOLD_POWER = 0;//TODO: change the holding power after tested
         
-    }
-
-    public static final class WristConstants{
-        public static final int k_WRIST_MOTOR_ID = 12;
-        public static final int k_WRIST_BOTTOM_LIMIT = 100;
-        public static final int k_WRIST_TOP_LIMIT = 1850;
-        public static final int k_ENC_PORT_A = 0;
-        public static final boolean k_ENC_REV = false;
     }
 }

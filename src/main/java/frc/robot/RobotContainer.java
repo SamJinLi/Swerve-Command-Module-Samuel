@@ -111,8 +111,8 @@ public class RobotContainer {
 // TODO: write the INTAKE!
 intakeSubsystem.setDefaultCommand(new IntakeDefaultCmd(
   intakeSubsystem,
-  m_js::getTriggerPressed,
-  () -> m_js.getRawButtonPressed(2)
+  m_js::getTrigger,
+  () -> m_js.getRawButton(2)
 ));
 armSubsystem.setDefaultCommand(new ArmCommand(
       armSubsystem,
