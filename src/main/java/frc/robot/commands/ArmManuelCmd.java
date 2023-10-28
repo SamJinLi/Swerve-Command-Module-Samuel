@@ -30,6 +30,10 @@ public class ArmManuelCmd extends CommandBase {
     {
       armSubsystem.setArmMotor(armInput.get());
     }
+    else
+    {
+        armSubsystem.setArmMotor(0);
+    }
   }
 
   // Called once the command ends or is interrupted.
