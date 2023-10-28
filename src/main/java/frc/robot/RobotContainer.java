@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 // import frc.robot.commands.ATWAutoCmd;
 // import frc.robot.commands.ATWJoystickCmd;
 import frc.robot.commands.ArmCommand;
+import frc.robot.commands.ArmManuelCmd;
 import frc.robot.commands.AutoBalanceCommand;
 // import frc.robot.commands.ChargingStationAuto;
 import frc.robot.commands.DefaultDriveCommand;
@@ -50,6 +51,8 @@ public class RobotContainer {
   // NOTE: port 2 is drivetrain?
   // private final Joystick m_js2 = new Joystick(2);
   // TODO: TUNE ALL THE VALUES
+  private final double test = -0.13061;
+  private final double conePickUpGround = -0.40816;
   // private final double zeron = 0;//zero
   // private final double flatn = 0;//flat
   // private final double zerop = 0;
@@ -114,9 +117,8 @@ intakeSubsystem.setDefaultCommand(new IntakeDefaultCmd(
   m_js::getTrigger,
   () -> m_js.getRawButton(2)
 ));
-armSubsystem.setDefaultCommand(new ArmCommand(
+armSubsystem.setDefaultCommand(new ArmManuelCmd(
       armSubsystem,
-      0d,
       () -> -m_js.getY()
 ));
     // Configure the button bindings
@@ -152,6 +154,18 @@ armSubsystem.setDefaultCommand(new ArmCommand(
 
         // Change all these 
         //zero that bih!
+        // TODO: startfromhere
+        // new Trigger(() -> m_js.getRawButtonPressed(3)).onTrue(new ArmCommand(
+        //     armSubsystem,
+        //     conePickUpGround,
+        //     () -> m_js.getThrottle()
+        // ));
+        // new Trigger(() -> m_js.getRawButtonPressed(5)).onTrue(new ArmCommand(
+        //     armSubsystem,
+        //     test,
+        //     () -> m_js.getThrottle()
+        
+        // ));
         // new Trigger(() -> m_js.getRawButtonPressed(7)).onTrue(new ArmCommand(
         //     armSubsystem,
         //     zeron,
