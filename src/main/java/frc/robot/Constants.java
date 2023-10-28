@@ -169,7 +169,7 @@ public final class Constants {
 
     
 
-        public static final int ARM_CURRENT_LIMIT_A = 25;
+        public static final int ARM_CURRENT_LIMIT_A = 30;
 
     
     }
