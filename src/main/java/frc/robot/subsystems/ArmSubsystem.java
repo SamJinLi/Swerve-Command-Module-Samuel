@@ -83,7 +83,8 @@ public class ArmSubsystem extends SubsystemBase {
         this.arm.set(input);
         //updating the shuffle board output
         SmartDashboard.putNumber("Arm output raw : ",input);
-
+        // SmartDashboard.putNumber("arm voltage in v", (Double)arm.getBusVoltage());
+        // SmartDashboard.putNumber("Arm output current in ams", arm.getOutputCurrent());
 
         // kP = 0.05;
         // kI = 0.2; // was 0.2
@@ -94,7 +95,7 @@ public class ArmSubsystem extends SubsystemBase {
         // double dt = Timer.getFPGATimestamp() - lastTimestamp;
         // errorRate = (error - lastError) / dt;
 
-        SmartDashboard.putNumber("Raw encoder value Spark max arm", getArmPositionDegree());
+        // SmartDashboard.putNumber("Raw encoder value Spark max arm", getArmPositionDegree());
         // SmartDashboard.putNumber("error", error);
         // SmartDashboard.putNumber("errorrate", errorRate);
         
@@ -122,6 +123,11 @@ public class ArmSubsystem extends SubsystemBase {
 
     @Override
     public void periodic() {
+        SmartDashboard.putNumber("Raw encoder value Spark max arm", getArmPositionDegree());
+        // SmartDashboard.putNumber("Arm output raw : ", input);
+        SmartDashboard.putNumber("arm voltage in v", (Double)arm.getBusVoltage());
+        SmartDashboard.putNumber("Arm output current in ams", arm.getOutputCurrent());
+        SmartDashboard.putNumber("Arm Encoder Val", getArmPositionDegree());
         // This method will be called once per scheduler run
     }
 }
