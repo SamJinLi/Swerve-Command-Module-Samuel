@@ -3,6 +3,7 @@ package frc.robot.commands;
 import java.util.function.Supplier;
 
 import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.ArmSubsystem;
 
@@ -35,8 +36,9 @@ public class ArmCommand extends CommandBase {
   public void execute() {
         double armSet  = position + (this.armAdjust.get());//was this.armAdjust.get()*-10 //if needed, change it back
         double armOutput = armPidController.calculate(armSubsystem.getArmPositionDegree(), armSet);
-        armOutput = (armOutput > .3)?.3:(armOutput< -.3)?-.3:armOutput; //chagne the .3 if needed, it's the max and min percent output in decimal form? IDK or in percent form
-        this.armSubsystem.setArmMotor(armOutput);
+        armOutput = (armOutput > .7)?.7:(armOutput< -.7)?-.7:armOutput; //chagne the .7 if needed, it's the max and min percent output in decimal form? IDK or in percent form
+        this.armSubsystem.setArmMotor(-armOutput);
+        SmartDashboard.putNumber("setArmMotor val", -armOutput);
   }
 
   // Called once the command ends or is interrupted.
