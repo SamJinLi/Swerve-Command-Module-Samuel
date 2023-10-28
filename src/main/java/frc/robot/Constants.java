@@ -159,7 +159,7 @@ public final class Constants {
         // TODO: change these stuff as needed
         public static final int arm_ID = 8; //FIXME: change the port id to 8
         //Uncomment k_MOTORS_REVERSED if true
-        public static final boolean k_MOTORS_REVERSED = true;
+        public static final boolean k_MOTORS_REVERSED = false;
         public class ControlType{
             public static final int k_PERCENT = 20;
             public static final int k_POSITION = 1;
