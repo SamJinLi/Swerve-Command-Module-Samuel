@@ -47,7 +47,7 @@ public class ArmSubsystem extends SubsystemBase {
     public ArmSubsystem() {
 
         arm.restoreFactoryDefaults();
-        arm.setInverted(true);
+        arm.setInverted(ArmConstants.k_MOTORS_REVERSED);
         arm.setIdleMode(IdleMode.kBrake);
         arm.setSmartCurrentLimit(ArmConstants.ARM_CURRENT_LIMIT_A);
         arm.burnFlash();
