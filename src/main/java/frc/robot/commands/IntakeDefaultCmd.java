@@ -35,10 +35,18 @@ public class IntakeDefaultCmd extends CommandBase {
   @Override
   public void execute() {
     double intakePower = 0.0;
-        if (trigger.get()) {
-            // cube in or cone out
+        if (trigger.get() && thumbButton.get()) {
+            // cube in
+            intakePower = IntakeConstants.k_CUBE_INTAKE_SPEED;
+            lastGamePiece = CUBE;
+        }
+        else if (trigger.get())
+        {
+            // CONE out aka full power
             intakePower = IntakeConstants.INTAKE_OUTPUT_POWER;
-        } else if (thumbButton.get()) {
+            lastGamePiece = CUBE;
+        }
+        else if (thumbButton.get()) {
             // cone in or cube out
             intakePower = -IntakeConstants.INTAKE_OUTPUT_POWER;
             lastGamePiece = CONE;

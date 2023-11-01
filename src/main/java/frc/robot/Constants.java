@@ -184,15 +184,15 @@ public final class Constants {
 
     public static final class IntakeConstants{
         public static final int SOLENOID_PORT = 7;
-        public static final double k_CUBE_INTAKE_SPEED = 0.4;
+        public static final double k_CUBE_INTAKE_SPEED = 0.3;
         public static final double k_CUBE_OUTTAKE_SPEED = -0.25;
         public static final double k_CONE_INTAKE_SPEED = 0.75;
         public static final double k_CONE_OUTTAKE_SPEED = -0.75;
         public static final int k_INTAKE_MOTOR_ID = 9; //FIXME: change port number to 9!
 
-        public static final int INTAKE_CURRENT_LIMIT_A = 25;
+        public static final int INTAKE_CURRENT_LIMIT_A = 30;
         public static final int INTAKE_HOLD_CURRENT_LIMIT_A = 0;
-        public static final double INTAKE_OUTPUT_POWER = 0.9;// decimal form! not in percent!
+        public static final double INTAKE_OUTPUT_POWER = 1;// decimal form! not in percent!
         public static final double INTAKE_HOLD_POWER = 0;//TODO: change the holding power after tested
         
     }
