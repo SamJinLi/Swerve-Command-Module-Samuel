@@ -36,7 +36,7 @@ public class ArmCommand extends CommandBase {
   public void execute() {
         double armSet  = position + (this.armAdjust.get());//was this.armAdjust.get()*-10 //if needed, change it back
         double armOutput = armPidController.calculate(armSubsystem.getArmPositionDegree(), armSet);
-        armOutput = (armOutput > .7)?.7:(armOutput< -.7)?-.7:armOutput; //chagne the .7 if needed, it's the max and min percent output in decimal form? IDK or in percent form
+        armOutput = (armOutput > .2)?.2:(armOutput< -.2)?-.2:armOutput; //chagne the .7 if needed, it's the max and min percent output in decimal form? IDK or in percent form
         this.armSubsystem.setArmMotor(-armOutput);
         SmartDashboard.putNumber("setArmMotor val", -armOutput);
   }

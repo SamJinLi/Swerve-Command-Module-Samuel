@@ -300,7 +300,7 @@ armSubsystem.setDefaultCommand(new ArmManuelCmd(
       // //new CloseSolenoidCmd(intakeSubsystem),//for cone only
       // new ATWAutoCmd(armSubsystem, zeron, null, null),
       // new CloseSolenoidCmd(intakeSubsystem),
-      // new PathPlannerCmd(m_drivetrainSubsystem, armSubsystem, intakeSubsystem, "OneMeter"),
+      new PathPlannerCmd(m_drivetrainSubsystem, "ThreeMeter")
       // new ChargingStationAuto(m_drivetrainSubsystem),
       // new LockWheelsCmd(m_drivetrainSubsystem)
     );
