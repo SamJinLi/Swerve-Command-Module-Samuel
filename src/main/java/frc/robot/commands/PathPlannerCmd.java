@@ -56,8 +56,10 @@ public class PathPlannerCmd extends SequentialCommandGroup {
         driveSubsystem::getPose, // Pose2d supplier
         driveSubsystem::resetOdometry, // Pose2d consumer, used to reset odometry at the beginning of auto
         Constants.m_kinematics, // SwerveDriveKinematics
-        new PIDConstants(1, 0 , 0.0), // PID constants to correct for translation error (used to create the X and Y PID controllers)
-        new PIDConstants(1, 0.25, 0.0), // PID constants to correct for rotation error (used to create the rotation controller)
+        // new PIDConstants(1, 0 , 0.0), // PID constants to correct for translation error (used to create the X and Y PID controllers)//okd
+        // new PIDConstants(1, 0.25, 0.0), // PID constants to correct for rotation error (used to create the rotation controller)//old
+        new PIDConstants(0, 0 , 0.0), // PID constants to correct for translation error (used to create the X and Y PID controllers)
+        new PIDConstants(0, 0, 0.0), // PID constants to correct for rotation error (used to create the rotation controller)
         driveSubsystem::drive, // Module states consumer used to output to the drive subsystem
         eventMap,
         true, // Should the path be automatically mirrored depending on alliance color. Optional, defaults to true
