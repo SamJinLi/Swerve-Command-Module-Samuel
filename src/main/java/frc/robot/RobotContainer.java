@@ -17,22 +17,22 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 // import frc.robot.commands.ATWAutoCmd;
 // import frc.robot.commands.ATWJoystickCmd;
-import frc.robot.commands.ArmCommand;
-import frc.robot.commands.ArmManuelCmd;
+// import frc.robot.commands.ArmCommand;
+// import frc.robot.commands.ArmManuelCmd;
 import frc.robot.commands.AutoBalanceCommand;
 // import frc.robot.commands.ChargingStationAuto;
 import frc.robot.commands.DefaultDriveCommand;
 // import frc.robot.commands.DisableCompCmd;
 import frc.robot.commands.DriveXCommand;
-import frc.robot.commands.IntakeDefaultCmd;
+// import frc.robot.commands.IntakeDefaultCmd;
 // import frc.robot.commands.IntakeDefaultCommand;
 import frc.robot.commands.LockWheelsCmd;
 // import frc.robot.commands.ShootCubeCmd;
 import frc.robot.commands.PathPlannerCmd;
 import frc.robot.commands.ZeroGyroscope;
-import frc.robot.subsystems.ArmSubsystem;
+// import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DrivetrainSubsystem;
-import frc.robot.subsystems.IntakeSubsystem;
+// import frc.robot.subsystems.IntakeSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -43,8 +43,8 @@ import frc.robot.subsystems.IntakeSubsystem;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final DrivetrainSubsystem m_drivetrainSubsystem = new DrivetrainSubsystem();
-  private final ArmSubsystem armSubsystem = new ArmSubsystem();
-  private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
+  // private final ArmSubsystem armSubsystem = new ArmSubsystem();
+  // private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
   private final XboxController m_controller = new XboxController(0);
   // NOTE: port 1 is arm
   private final Joystick m_js = new Joystick(1);
@@ -112,15 +112,15 @@ public class RobotContainer {
 
 // ));
 // TODO: write the INTAKE!
-intakeSubsystem.setDefaultCommand(new IntakeDefaultCmd(
-  intakeSubsystem,
-  m_js::getTrigger,
-  () -> m_js.getRawButton(2)
-));
-armSubsystem.setDefaultCommand(new ArmManuelCmd(
-      armSubsystem,
-      () -> -m_js.getY()
-));
+// intakeSubsystem.setDefaultCommand(new IntakeDefaultCmd(
+//   intakeSubsystem,
+//   m_js::getTrigger,
+//   () -> m_js.getRawButton(2)
+// ));
+// armSubsystem.setDefaultCommand(new ArmManuelCmd(
+//       armSubsystem,
+//       () -> -m_js.getY()
+// ));
     // Configure the button bindings
     configureButtonBindings();
     // usbCamera = new UsbCamera("cam", 1);
@@ -135,6 +135,7 @@ armSubsystem.setDefaultCommand(new ArmManuelCmd(
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
+
   private void configureButtonBindings() {
     new Trigger(m_controller::getAButtonPressed).onTrue(new LockWheelsCmd(m_drivetrainSubsystem));
     // Back button zeros the gyroscope
