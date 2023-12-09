@@ -4,7 +4,6 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.math.controller.PIDController;
 // import edu.wpi.first.networktables.NetworkTableEntry;
 
@@ -12,18 +11,37 @@ import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj.shuffleboard.SimpleWidget;
 import frc.robot.subsystems.TunePIDSubsystem;
+import java.util.ArrayList;
+
+import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardLayout;
+import java.util.List;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class TunePIDSubsystem extends SubsystemBase {
+  private final ShuffleboardTab pidTab = Shuffleboard.getTab("Tune PID");
+  private final List<PIDController> pidControllers = new ArrayList<>();
+  private final List<SimpleWidget> pWidgets = new ArrayList<>();
+  private final List<SimpleWidget> iWidgets = new ArrayList<>();
+  private final List<SimpleWidget> dWidgets = new ArrayList<>();
 
-  private final PIDController pid;
-  private final SimpleWidget pWidget;
-  private final SimpleWidget iWidget;
-  private final SimpleWidget dWidget;
+  public void addNewPIDController(PIDController pid, String name) {
+    pidControllers.add(pid);
+    ShuffleboardLayout pidLayout = pidTab.getLayout(name, BuiltInLayouts.kList);
+    pWidgets.add(pidLayout.add("P Value", 0).withWidget(BuiltInWidgets.kTextView));
+    iWidgets.add(pidLayout.add("I Value", 0).withWidget(BuiltInWidgets.kTextView));
+    dWidgets.add(pidLayout.add("D Value", 0).withWidget(BuiltInWidgets.kTextView));
+  }
 
-  public TunePIDSubsystem(PIDController pid, shu) {
-  
+  public void updatePIDValues() {
+    for (int i = 0; i < pidControllers.size(); i++) {
+      double kP = pWidgets.get(i).getEntry().getDouble(0);
+      double kI = iWidgets.get(i).getEntry().getDouble(0);
+      double kD = dWidgets.get(i).getEntry().getDouble(0);
+      pidControllers.get(i).setPID(kP, kI, kD);
+    }
   }
 
   @Override
