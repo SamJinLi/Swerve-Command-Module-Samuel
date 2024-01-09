@@ -202,7 +202,7 @@ private final GenericEntry isLocked, pitch, roll, currPose, autoRunning, angle, 
     }
 
     public double getHeading() {
-        return 0-(m_navx.getYaw());
+        return 90-(m_navx.getYaw());
     }
 
   public Rotation2d getGyroscopeRotation() {
